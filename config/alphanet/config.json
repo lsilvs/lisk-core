@@ -452,6 +452,9 @@
 					}
 				],
 				"defaultPassword": "elephant tree paris dragon chair galaxy"
+			},
+			"transactions": {
+				"maxTransactionsPerQueue": 5000
 			}
 		},
 		"network": {
