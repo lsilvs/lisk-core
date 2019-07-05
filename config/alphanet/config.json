@@ -1,9 +1,12 @@
 {
 	"app": {
+		"ipc": {
+			"enabled": true
+		},
 		"genesisConfig": {
 			"EPOCH_TIME": "2016-05-24T17:00:00.000Z",
 			"BLOCK_TIME": 10,
-			"MAX_TRANSACTIONS_PER_BLOCK": 160,
+			"MAX_TRANSACTIONS_PER_BLOCK": 150,
 			"REWARDS": {
 				"MILESTONES": [
 					"500000000",
@@ -20,14 +23,14 @@
 	"components": {
 		"logger": {
 			"fileLogLevel": "debug",
-			"logFileName": "logs/alphanet/lisk.log",
+			"logFileName": "logs/devnet/lisk.log",
 			"consoleLogLevel": "info"
 		},
 		"storage": {
-			"database": "lisk_alpha",
+			"database": "lisk_dev",
 			"min": 1,
 			"max": 10,
-			"logFileName": "logs/alphanet/lisk_db.log"
+			"logFileName": "logs/devnet/lisk_db.log"
 		},
 		"cache": {
 			"enabled": true
@@ -37,11 +40,11 @@
 		"http_api": {
 			"access": {
 				"public": true
-			},
-			"httpPort": 4000
+			}
 		},
 		"chain": {
 			"forging": {
+				"force": true,
 				"delegates": [
 					{
 						"encryptedPassphrase": "iterations=1&salt=476d4299531718af8c88156aab0bb7d6&cipherText=663dde611776d87029ec188dc616d96d813ecabcef62ed0ad05ffe30528f5462c8d499db943ba2ded55c3b7c506815d8db1c2d4c35121e1d27e740dc41f6c405ce8ab8e3120b23f546d8b35823a30639&iv=1a83940b72adc57ec060a648&tag=b5b1e6c6e225c428a4473735bc8f1fc9&version=1",
