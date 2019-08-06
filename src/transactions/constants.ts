@@ -12,10 +12,8 @@
  * Removal or modification of this copyright notice is prohibited.
  *
  */
-/* tslint:disable:no-magic-numbers */
-import { constants } from '@liskhq/lisk-transactions';
-
-const { FIXED_POINT, MAX_TRANSACTION_AMOUNT } = constants;
+import { transactions } from 'lisk-sdk';
+const { FIXED_POINT, MAX_TRANSACTION_AMOUNT } = transactions.constants;
 
 export const TRANSACTION_DAPP_TYPE = 5;
 

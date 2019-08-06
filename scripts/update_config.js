@@ -25,11 +25,7 @@ const readline = require('readline');
 const _ = require('lodash');
 const program = require('commander');
 const { configurator } = require('lisk-framework');
-const {
-	stringifyEncryptedPassphrase,
-	getPrivateAndPublicKeyFromPassphrase,
-	encryptPassphraseWithPassword,
-} = require('@liskhq/lisk-cryptography');
+const { cryptography } = require('lisk-sdk');
 const tempy = require('tempy');
 const { observableDiff, applyChange } = require('deep-diff');
 const JSONHistory = require('./json_history');
@@ -213,10 +209,10 @@ history.version('1.0.0-rc.1', version => {
 					config.forging.secret.forEach(secret => {
 						console.info('.......');
 						config.forging.delegates.push({
-							encryptedPassphrase: stringifyEncryptedPassphrase(
-								encryptPassphraseWithPassword(secret, password)
+							encryptedPassphrase: cryptography.stringifyEncryptedPassphrase(
+								cryptography.encryptPassphraseWithPassword(secret, password)
 							),
-							publicKey: getPrivateAndPublicKeyFromPassphrase(secret).publicKey,
+							publicKey: cryptography.getPrivateAndPublicKeyFromPassphrase(secret).publicKey,
 						});
 					});
 
