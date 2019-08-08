@@ -22,5 +22,8 @@ export const TRANSACTION_DAPP_TYPE = 5;
 export const IN_TRANSFER_FEE = FIXED_POINT * 0.1;
 export const OUT_TRANSFER_FEE = FIXED_POINT * 0.1;
 export const DAPP_FEE = FIXED_POINT * 25;
+export const LOCK_FEE = FIXED_POINT * 0.1;
+export const CLAIM_FEE = FIXED_POINT * 0.1;
+export const REFUND_FEE = FIXED_POINT * 0.1;
 
 export { FIXED_POINT, MAX_TRANSACTION_AMOUNT };
